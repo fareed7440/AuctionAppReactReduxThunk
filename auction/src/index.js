@@ -6,6 +6,7 @@ import store from './store/store'
 import { Provider } from 'react-redux';
 import SignupContainer from './containers/signupCon'
 import LoginContainer  from './containers/loginCon'
+import Home from './components/home'
 import {
   browserHistory, Router, Route, IndexRoute, IndexRedirect, Link, IndexLink
 } from 'react-router';
@@ -24,6 +25,7 @@ render(){
 <Route path="/" component={SignupContainer}></Route>
               <Route path="/signupCon" component={SignupContainer}></Route>
               <Route path="/loginCon" component={LoginContainer}></Route>
+              <Route path="/home" component={Home}></Route>
               
             </Router>
           </Provider>

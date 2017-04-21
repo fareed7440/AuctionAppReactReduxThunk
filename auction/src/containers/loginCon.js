@@ -1,10 +1,11 @@
 import loginRequest from '../store/actions/loginAct'
 import {connect} from 'react-redux'
 import Login from "../components/login"
-
+import logoutRequest from '../store/actions/logoutAct'
 function mapStataToProps(state){
     return{
-        auction : state.LoginReducer
+        auction : state.LoginReducer,
+        app : state.LogoutReducer
     }
 }
 
@@ -12,6 +13,7 @@ function mapStataToProps(state){
 function mapDispatchToProps(dispatch){
     return{
         LoginReq : (data)=>dispatch(loginRequest(data)),
+        LogoutRequest : ()=>dispatch(logoutRequest())
     }
 }
 

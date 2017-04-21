@@ -1,11 +1,12 @@
-import {combineReducers} from 'redux'
+import { combineReducers } from 'redux'
 import SignupReducer from './signupReducer'
 import LoginReducer from './loginReducer'
-
-const MainReducer  = combineReducers(
+import LogoutReducer from './logoutReducer'
+const MainReducer = combineReducers(
     {
-        Auction :SignupReducer,
-LoginReducer
+        Auction: SignupReducer,
+        LoginReducer,
+        LogoutReducer
     }
 )
 

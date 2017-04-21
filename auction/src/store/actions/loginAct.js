@@ -10,7 +10,7 @@ function loginRequest(loginData) {
         DB.auth.signInWithEmailAndPassword(loginData.email, loginData.password).then((data) => {
          dispatch(LoginRequestSuccess(data))
             alert('login success')
-              //browserHistory.push('/home')
+              browserHistory.push('/home')
         })
             .catch((error) => {
                 console.log('kjjjjjjjjjjjjjjj', error)
