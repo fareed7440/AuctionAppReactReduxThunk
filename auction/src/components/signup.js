@@ -6,7 +6,7 @@ import Paper from 'material-ui/Paper';
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
-
+import {Link} from 'react-router'
 const styles2 = {
   title: {
     cursor: 'pointer',
@@ -114,7 +114,8 @@ class Signup extends React.Component {
                                 hintText="Enter Password"
                                 underlineStyle={styles.underlineStyle}
                             /><br /><br /><br />
-                            <RaisedButton label="Signup" type='submit' style={style} />
+                            <RaisedButton label="Signup" type='submit' style={style} /><br/><br/>
+                            <Link to='/loginCon'>if already  have Account Click here </Link>
                         </form>
                     </Paper>
 

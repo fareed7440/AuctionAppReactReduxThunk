@@ -1,22 +1,23 @@
 import loginRequest from '../store/actions/loginAct'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import Login from "../components/login"
-import logoutRequest from '../store/actions/logoutAct'
-function mapStataToProps(state){
-    return{
-        auction : state.LoginReducer,
-        app : state.LogoutReducer
+//import logoutRequest from '../store/actions/logoutAct'
+//import Home from '../components/home'
+function mapStataToProps(state) {
+    return {
+        auction: state.LoginReducer,
+       // snake: state.LoginReducer.isLogin
     }
 }
 
 
-function mapDispatchToProps(dispatch){
-    return{
-        LoginReq : (data)=>dispatch(loginRequest(data)),
-        LogoutRequest : ()=>dispatch(logoutRequest())
+function mapDispatchToProps(dispatch) {
+    return {
+        LoginReq: (data) => dispatch(loginRequest(data)),
+        //logoutReq: () => dispatch(logoutRequest())
     }
 }
 
 
-const LoginContainer =connect(mapStataToProps,mapDispatchToProps)(Login);
-export default LoginContainer ; 
+const LoginContainer = connect(mapStataToProps, mapDispatchToProps)(Login);
+export default LoginContainer; 

@@ -6,7 +6,8 @@ import store from './store/store'
 import { Provider } from 'react-redux';
 import SignupContainer from './containers/signupCon'
 import LoginContainer  from './containers/loginCon'
-import Home from './components/home'
+import HomeCon from './components/home'
+import AddProductContainer from './containers/addProductCon'
 import {
   browserHistory, Router, Route, IndexRoute, IndexRedirect, Link, IndexLink
 } from 'react-router';
@@ -25,7 +26,11 @@ render(){
 <Route path="/" component={SignupContainer}></Route>
               <Route path="/signupCon" component={SignupContainer}></Route>
               <Route path="/loginCon" component={LoginContainer}></Route>
-              <Route path="/home" component={Home}></Route>
+
+
+              <Route path="/home" component={HomeCon}>
+           <Route path="/addproductCon" component={AddProductContainer}></Route>
+             </Route>
               
             </Router>
           </Provider>
