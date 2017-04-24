@@ -1,100 +1,72 @@
 import React from 'react'
 import AppBar from 'material-ui/AppBar';
-import FlatButton from 'material-ui/FlatButton';
-import {connect} from 'react-redux'
-import logoutRequest from '../store/actions/logoutAct'
 import Drawer from 'material-ui/Drawer';
+import FlatButton from 'material-ui/FlatButton';
 import { Link } from 'react-router'
 import RaisedButton from 'material-ui/RaisedButton';
+import logoutRequest from '../store/actions/logoutAct'
+import {connect} from 'react-redux'
+
 const styless = {
   customWidth: {
     width: 150,
     backgroundColor: 'purple700',
   },
 };
-const style = {
-  margin: 15,
-  backgroundColor: 'transparent',
-};
-class Home extends React.Component{
-constructor(props){
-    super(props)
-this.state = {
+class Main extends React.Component{
+    constructor(){
+        super()
+        this.state = {
       open: false
     }
-}
+    }
  handleToggle = () => this.setState({ open: !this.state.open });
 handleLogout = ()=>{
     this.props.logoutReq()
 }
-
     render(){
         return(
             <div>
 
  <AppBar
-    title="Auction Management Application"
+    title="MAIN"
     style = {{textAlign:'center'}}
+      onTouchTap={this.handleToggle}
     iconClassNameRight="muidocs-icon-navigation-expand-more"
-     onTouchTap={this.handleToggle}
   >
-
-    <FlatButton label="logout" 
+ <FlatButton label="logout" 
     style = {{color:'white',margin:'20'}}
     onClick = {this.handleLogout.bind(this)}
     
     />
+    </AppBar>
+  <Drawer width={300} openSecondary={false} open={this.state.open} docked={true} >
 
-  </AppBar>
-
-        <Drawer width={300} openSecondary={false} open={this.state.open} docked={true} >
-
-          <AppBar title="Auction"
-            style={{ height:'78', textAlign: 'center', marginTop:'-2' }}
+          <AppBar title="Go To"
+            style={{ height:'66', textAlign: 'center', marginTop:'-2' }}
           />
 
           <img src='https://cdn0.vox-cdn.com/thumbor/gKdZRVCEdss5Xx_1liF5jbHaQcE=/0x0:640x480/1200x800/filters:focal(0x0:640x480)/cdn0.vox-cdn.com/uploads/chorus_image/image/49517711/auction.0.png' height='220' width='290' alt="invent" />
           <br />
           <br /> <br />
 
-          <Link to='/addProductCon'> <RaisedButton
+          <Link to='/auctioner'> <RaisedButton
             fullWidth
            
             onTouchTap={this.handleToggle}
 
-            label="Add Product"
+            label="goto Auctioner"
             primary={false}
 
           /></ Link><br /><br /><br />
-          <Link to="/saleCon"> <RaisedButton
+          <Link to="/Bider"> <RaisedButton
             fullWidth
             style={styless}
             onTouchTap={this.handleToggle}
 
-            label="Add sale "
+            label=" goto Bidder"
             primary={false}
           /></ Link><br /><br /><br />
-
-          <Link to="/purchaseCon"> <RaisedButton
-            fullWidth
-            style={styless}
-            onTouchTap={this.handleToggle}
-
-            label="Add purchase "
-            primary={false}
-          /></ Link><br /><br /><br />
-
-          <Link to="/viewpurchaseCon"> <RaisedButton
-            fullWidth
-            style={styless}
-            onTouchTap={this.handleToggle}
-            label="view Purchase "
-            primary={false}
-          /></ Link><br /><br /><br />
-
-          
-
-
         </Drawer>
         <div>
           {this.props.children}
@@ -105,10 +77,10 @@ handleLogout = ()=>{
     }
 }
 
+//export default Main 
 
 
-
-function mapStataToProps(state){
+        function mapStataToProps(state){
     return{
         app : state.LogoutReducer
     }
@@ -123,5 +95,5 @@ function mapDispatchToProps(dispatch){
 }
 
 
-const HomeCon =connect(mapStataToProps,mapDispatchToProps)(Home);
-export default HomeCon; 
+const MainCon =connect(mapStataToProps,mapDispatchToProps)(Main);
+export default MainCon; 

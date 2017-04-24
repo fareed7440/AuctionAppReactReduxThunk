@@ -3,6 +3,7 @@ import * as DB from '../../firebase/database'
 import { browserHistory } from 'react-router';
 
 function addProduct(productData) {
+   console.log('33333333333333', productData)
     return dispatch => {
         dispatch(addProductRequest());
 

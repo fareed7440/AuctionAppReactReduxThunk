@@ -6,8 +6,10 @@ import store from './store/store'
 import { Provider } from 'react-redux';
 import SignupContainer from './containers/signupCon'
 import LoginContainer  from './containers/loginCon'
-import HomeCon from './components/home'
+import  Auctioner from './components/auctioner'
 import AddProductContainer from './containers/addProductCon'
+import Bider from './components/Bider'
+import MainCon from './components/main'
 import {
   browserHistory, Router, Route, IndexRoute, IndexRedirect, Link, IndexLink
 } from 'react-router';
@@ -27,8 +29,9 @@ render(){
               <Route path="/signupCon" component={SignupContainer}></Route>
               <Route path="/loginCon" component={LoginContainer}></Route>
 
-
-              <Route path="/home" component={HomeCon}>
+<Route path="/main" component={MainCon}></Route>
+<Route path="/Bider" component={Bider}></Route>
+              <Route path="/auctioner" component={ Auctioner}>
            <Route path="/addproductCon" component={AddProductContainer}></Route>
              </Route>
               
