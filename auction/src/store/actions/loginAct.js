@@ -8,6 +8,7 @@ function loginRequest(loginData) {
     return dispatch => {
         dispatch(LoginRequest());
         DB.auth.signInWithEmailAndPassword(loginData.email, loginData.password).then((data) => {
+       // DB.database.ref('loginUser'+data.uid).set(loginData)
          dispatch(LoginRequestSuccess(data))
             alert('login success')
               browserHistory.push('/main')

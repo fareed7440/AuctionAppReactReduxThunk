@@ -43,7 +43,7 @@ handleLogout = ()=>{
   <Drawer width={300} openSecondary={false} open={this.state.open} docked={true} >
 
           <AppBar title="Go To"
-            style={{ height:'66', textAlign: 'center', marginTop:'-2' }}
+            style={{ height:'78', textAlign: 'center', marginTop:'-2' }}
           />
 
           <img src='https://cdn0.vox-cdn.com/thumbor/gKdZRVCEdss5Xx_1liF5jbHaQcE=/0x0:640x480/1200x800/filters:focal(0x0:640x480)/cdn0.vox-cdn.com/uploads/chorus_image/image/49517711/auction.0.png' height='220' width='290' alt="invent" />

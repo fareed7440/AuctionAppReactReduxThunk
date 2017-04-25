@@ -8,6 +8,7 @@ import SignupContainer from './containers/signupCon'
 import LoginContainer  from './containers/loginCon'
 import  Auctioner from './components/auctioner'
 import AddProductContainer from './containers/addProductCon'
+import ViewProductContainer from './containers/viewproductCon'
 import Bider from './components/Bider'
 import MainCon from './components/main'
 import {
@@ -30,7 +31,11 @@ render(){
               <Route path="/loginCon" component={LoginContainer}></Route>
 
 <Route path="/main" component={MainCon}></Route>
-<Route path="/Bider" component={Bider}></Route>
+<Route path="/Bider" component={Bider}>
+
+ <Route path="/viewproductCon" component={ViewProductContainer}></Route>
+
+</Route>
               <Route path="/auctioner" component={ Auctioner}>
            <Route path="/addproductCon" component={AddProductContainer}></Route>
              </Route>

@@ -73,7 +73,15 @@ this.state = {
 
           /></ Link><br /><br /><br />
         
+<Link to='/addProductCon'> <RaisedButton
+            fullWidth
+           
+            onTouchTap={this.handleToggle}
 
+            label="View Bider"
+            primary={false}
+
+          /></ Link><br /><br /><br />
 
         </Drawer>
         <div>

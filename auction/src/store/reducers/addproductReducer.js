@@ -8,11 +8,16 @@ function AddProductReducer(state = initialState,action){
         case Actions.SIGNUPREQUESTSUCCESS:{
             var state2 = Object.assign({},state,{login:action.data})
             state = state2
-            return state
-            }
+            return state;
+        }
+        
+        
 default:
-return state;    
+return state;   
 }
 
-}     
+}   
+
+
+
 export default AddProductReducer;

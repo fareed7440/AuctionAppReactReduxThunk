@@ -42,14 +42,14 @@ this.state = {
         <Drawer width={300} openSecondary={false} open={this.state.open} docked={true} >
 
           <AppBar title="Bider"
-            style={{ height:'66', textAlign: 'center', marginTop:'-2' }}
+            style={{ height:'78', textAlign: 'center', marginTop:'-2' }}
           />
 
           <img src= 'http://houstonauctioncompany.com/wp-content/uploads/2015/02/th-80.jpeg'height='220' width='290' alt="invent" />
           <br />
           <br /> <br />
 
-          <Link to='/addProductCon'> <RaisedButton
+          <Link to='/viewproductCon'> <RaisedButton
             fullWidth
            
             onTouchTap={this.handleToggle}
