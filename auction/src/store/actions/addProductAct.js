@@ -3,7 +3,7 @@ import * as DB from '../../firebase/database'
 import { browserHistory } from 'react-router';
 
 function addProduct(productData) {
-   console.log('33333333333333', productData)
+    console.log('33333333333333', productData)
     return dispatch => {
         dispatch(addProductRequest());
 
@@ -16,10 +16,10 @@ function addProduct(productData) {
             else {
                 dispatch(addProductRequestSuccess())
                 alert('successfully added')
-               // browserHistory.push('/main')
+                // browserHistory.push('/main')
             }
         });
-    
+
     }
 }
 
@@ -41,6 +41,6 @@ export function addProductRequestSuccess(data) {
 export function addProductRequestFailed() {
     return {
         type: Actions.ADDPRODUCTREQUESTFAILED
-}
+    }
 }
 export default addProduct;

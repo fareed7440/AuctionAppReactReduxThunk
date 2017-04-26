@@ -5,10 +5,11 @@ import './index.css';
 import store from './store/store'
 import { Provider } from 'react-redux';
 import SignupContainer from './containers/signupCon'
-import LoginContainer  from './containers/loginCon'
-import  Auctioner from './components/auctioner'
+import LoginContainer from './containers/loginCon'
+import Auctioner from './components/auctioner'
 import AddProductContainer from './containers/addProductCon'
 import ViewProductContainer from './containers/viewproductCon'
+import BitProductContainer from './containers/bitproductCon'
 import Bider from './components/Bider'
 import MainCon from './components/main'
 import {
@@ -19,27 +20,28 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
 
-export class Routing extends React.Component{
-render(){
-  return(
-    <div>
- <MuiThemeProvider>
+export class Routing extends React.Component {
+  render() {
+    return (
+      <div>
+        <MuiThemeProvider>
           <Provider store={store}>
             <Router history={browserHistory}>
-<Route path="/" component={SignupContainer}></Route>
+              <Route path="/" component={SignupContainer}></Route>
               <Route path="/signupCon" component={SignupContainer}></Route>
               <Route path="/loginCon" component={LoginContainer}></Route>
 
-<Route path="/main" component={MainCon}></Route>
-<Route path="/Bider" component={Bider}>
+              <Route path="/main" component={MainCon}></Route>
+              <Route path="/Bider" component={Bider}>
+                <Route path="/bitproductCon" component={BitProductContainer}></Route>
+                <Route path="/viewproductCon" component={ViewProductContainer}></Route>
+                <Route path="/viewproductCon/:id" component={BitProductContainer}></Route>
 
- <Route path="/viewproductCon" component={ViewProductContainer}></Route>
+              </Route>
+              <Route path="/auctioner" component={Auctioner}>
+                <Route path="/addproductCon" component={AddProductContainer}></Route>
+              </Route>
 
-</Route>
-              <Route path="/auctioner" component={ Auctioner}>
-           <Route path="/addproductCon" component={AddProductContainer}></Route>
-             </Route>
-              
             </Router>
           </Provider>
         </MuiThemeProvider>
@@ -49,9 +51,9 @@ render(){
 
 
 
-    </div>
-  )
-}
+      </div>
+    )
+  }
 }
 
 
