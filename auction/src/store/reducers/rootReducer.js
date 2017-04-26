@@ -3,6 +3,7 @@ import SignupReducer from './signupReducer'
 import LoginReducer from './loginReducer'
 import LogoutReducer from './logoutReducer'
 import AddProductReducer from './addproductReducer'
+import  UserReducer from './getUserReducer'
 import ViewProductReducer from './viewProductReducer'
 import BitReducer from './bitReducer'
 const MainReducer = combineReducers(
@@ -12,7 +13,8 @@ const MainReducer = combineReducers(
         LogoutReducer,
         AddProductReducer,
         ViewProductReducer,
-        BitReducer
+        BitReducer,
+        UserReducer
     }
 )
 
