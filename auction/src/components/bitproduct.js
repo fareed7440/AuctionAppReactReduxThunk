@@ -17,20 +17,25 @@ class BitProduct extends Component {
       //  this.props.userRequest()
     //    this.props.loadProductDetail()
         this.props.ViewBitRequest(this.props.params.id)
+        this.props.users();
         console.log("recieve.................",this.props.params.id)
+        console.log('jjjjjjjjjjjjjjjjjjjjjjjjjjjjj',this.props.users)
     }
 
     handleSubmit(ev) {
         ev.preventDefault();
         let obj = {
-            name: this.props.bit.viewbit[1],
-            email: this.props.bit.viewbit[0],
-            amount: this.refs.bit.getValue(),
-            pic : this.props.bit.viewbit[0]
+            name: this.props.bit.bidding[0],
+            email: this.props.looooooog.loguser.email,
+            amount: this.refs.amount.getValue(),
+            pic : this.props.bit.bidding[3],
+             sdate : this.props.bit.bidding[6],
+              edate : this.props.bit.bidding[2],
+            price :  this.props.bit.bidding[4],
 
         }
            console.log("Submitted Data", obj)
-           this.props.bitProducts(obj);
+           this.props.AddBidRequest(obj);
         
     }
     render() {
@@ -49,7 +54,9 @@ class BitProduct extends Component {
         };
 
        const viewbit = this.props && this.props.bit && this.props.bit.bidding? this.props.bit.bidding: [];
+        const viewUser = this.props && this.props.looooooog  && this.props.looooooog .loguser? this.props.looooooog .loguser: [];
     console.log('view Bitt',viewbit)
+    console.log('userrrr', viewUser)
         return (
 
             <div className="carddiv">             
@@ -57,7 +64,7 @@ class BitProduct extends Component {
                     <mat.Paper style={style.paper}>
 
                         <mat.CardHeader
-                          //  title={"Hello" + " " + users[1]}
+                           title={"Hello:" + " " + viewUser.email}
                           //  subtitle={users[0]}
                             avatar={<mat.Avatar icon={<Person />} />}
                         />

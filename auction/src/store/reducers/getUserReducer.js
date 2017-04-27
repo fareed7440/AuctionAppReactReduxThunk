@@ -5,8 +5,8 @@ const initialState = {};
 
 function UserReducer(state = initialState,action){
     switch(action.type){
-        case Actions.LOGINREQUESTSUCCESS:{
-            var state6 = Object.assign({},state,{user:action.data})
+        case Actions.USERDETAILSUCCESS:{
+            var state6 = Object.assign({},state,{loguser:action.data})
             state = state6
             return state
             }

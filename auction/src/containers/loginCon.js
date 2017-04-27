@@ -6,8 +6,10 @@ import Login from "../components/login"
 function mapStataToProps(state) {
     return {
         auction: state.LoginReducer,
+
        // snake: state.LoginReducer.isLogin
     }
+    console.log('ghghghghghghgh',state.LoginReducer)
 }
 
 

@@ -10,7 +10,8 @@ function BitReducer(state = initialState,action){
             state = state3
             return state;
 
-            }
+        }
+        
 default:
 return state;    
 }
