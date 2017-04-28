@@ -73,7 +73,7 @@ this.state = {
 
           /></ Link><br /><br /><br />
         
-<Link to='/addProductCon'> <RaisedButton
+<Link to='/viewBidProductCon'> <RaisedButton
             fullWidth
            
             onTouchTap={this.handleToggle}

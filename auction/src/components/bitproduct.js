@@ -17,7 +17,8 @@ class BitProduct extends Component {
       //  this.props.userRequest()
     //    this.props.loadProductDetail()
         this.props.ViewBitRequest(this.props.params.id)
-        this.props.users();
+      
+      
         console.log("recieve.................",this.props.params.id)
         console.log('jjjjjjjjjjjjjjjjjjjjjjjjjjjjj',this.props.users)
     }

@@ -7,6 +7,7 @@ import  UserReducer from './getUserReducer'
 import ViewProductReducer from './viewProductReducer'
 import BitReducer from './bitReducer'
 import AddBitReducer from './addBidreducer'
+import viewBidProductReducer from './viewBidProductReducer'
 const MainReducer = combineReducers(
     {
         Auction: SignupReducer,
@@ -16,7 +17,8 @@ const MainReducer = combineReducers(
         ViewProductReducer,
         BitReducer,
         UserReducer,
-        AddBitReducer
+        AddBitReducer,
+        viewBidProductReducer,
     }
 )
 

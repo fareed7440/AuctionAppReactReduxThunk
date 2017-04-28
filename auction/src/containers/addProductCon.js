@@ -2,14 +2,6 @@ import addProduct from '../store/actions/addProductAct'
 import AddProduct from '../components/addProduct'
 import {connect} from 'react-redux'
 import RaisedButton from 'material-ui/RaisedButton';
-
-
-
-
-
-
-
-
 function mapStataToProps(state){
     return{
       app : state.AddProductReducer

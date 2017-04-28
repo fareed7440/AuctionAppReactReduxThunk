@@ -17,8 +17,15 @@ function loginRequest(loginData) {
        console.log("data", data)
          dispatch(LoginRequestSuccess(data))
             alert('login success')
+             dispatch(userDetailRequest());
+    var user = DB.auth.currentUser;
+    console.log('usssssser',user)
+      dispatch(userDetailRequestSuccess(user));
+    
               browserHistory.push('/main')
+
         })
+        
             .catch((error) => {
                 console.log('kjjjjjjjjjjjjjjj', error)
                 alert('error')
@@ -48,6 +55,22 @@ export function LoginRequestSuccess(data) {
 export function LoginRequestFailed() {
     return {
         type: Actions.LOGINREQUESTFAILED
+    }
+}
+
+
+
+export function  userDetailRequest (){
+    return{
+        type : Actions.USERDETAIL
+    }
+}
+
+
+export function userDetailRequestSuccess(data){
+    return{
+        type : Actions.USERDETAILSUCCESS,
+        data
     }
 }
 

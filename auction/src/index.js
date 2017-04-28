@@ -10,6 +10,7 @@ import Auctioner from './components/auctioner'
 import AddProductContainer from './containers/addProductCon'
 import ViewProductContainer from './containers/viewproductCon'
 import BitProductContainer from './containers/bitproductCon'
+import ViewBidProductContainer from './containers/viewBidProductCon'
 import Bider from './components/Bider'
 import MainCon from './components/main'
 import {
@@ -40,6 +41,7 @@ export class Routing extends React.Component {
               </Route>
               <Route path="/auctioner" component={Auctioner}>
                 <Route path="/addproductCon" component={AddProductContainer}></Route>
+                 <Route path="/viewBidproductCon" component={ViewBidProductContainer}></Route>
               </Route>
 
             </Router>

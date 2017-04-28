@@ -18,7 +18,7 @@ const style = {
     textAlign: 'center',
     display: 'inline-block',
 };
-class ViewProduct extends React.Component {
+class ViewBidProduct extends React.Component {
     constructor(props) {
         super(props);
 
@@ -26,22 +26,17 @@ class ViewProduct extends React.Component {
 
     }
     componentDidMount() {
-        this.props.ViewProductRequest()
+        this.props.ViewBidProductRequest()
        // this.props.bittingData()
+      // this.props.viewBidProductRequest ()
     }
-    handleData = (id) => {
-        browserHistory.push("/viewproductCon/" + id)
-        console.log("ID", id)
-        // this.props.bittingData(id)
 
-    }
+    
 
 
     render() {
-        const viewproduct = this.props && this.props.app && this.props.app.viewProduct ? this.props.app.viewProduct : [];
-        const viewbit = this.props && this.props.app && this.props.app.bidding ? this.props.app.bidding : [];
-        console.log('wievvvvvvvv', viewproduct);
-        console.log('bit viewproduct', viewbit)
+        const BiddingData = this.props && this.props.app && this.props.app.viewBidProduct? this.props.app.viewBidProduct : [];
+        console.log('bidddddddd',BiddingData)
 
         return (
             <div>
@@ -51,25 +46,26 @@ class ViewProduct extends React.Component {
                     <TableHeader adjustForCheckbox={false} displaySelectAll={false} >
                         <TableRow >
 
-                            <TableHeaderColumn style={{ color: "#7B1FA2" }}>Product</TableHeaderColumn>
-                            <TableHeaderColumn style={{ color: "#7B1FA2" }}>Company</TableHeaderColumn>
-                            <TableHeaderColumn style={{ color: "#7B1FA2" }}>Pic</TableHeaderColumn>
-                            <TableHeaderColumn style={{ color: "#7B1FA2" }} >start Date</TableHeaderColumn>
-                            <TableHeaderColumn style={{ color: "#7B1FA2" }}> End Date</TableHeaderColumn>
-                            <TableHeaderColumn style={{ color: "#7B1FA2" }}> Price</TableHeaderColumn>
-                            <TableHeaderColumn style={{ color: "#7B1FA2" }}> Quantity</TableHeaderColumn>
-                            <TableHeaderColumn style={{ color: "#7B1FA2" }}>start Bit</TableHeaderColumn>
-
+                            <TableHeaderColumn style={{ color: "#7B1FA2" }}>Product Name</TableHeaderColumn>
+                            <TableHeaderColumn style={{ color: "#7B1FA2" }}>Customer Email</TableHeaderColumn>
+                            <TableHeaderColumn style={{ color: "#7B1FA2" }}>Customer Price</TableHeaderColumn>
+                            <TableHeaderColumn style={{ color: "#7B1FA2" }} >Least Price</TableHeaderColumn>
+                              <TableHeaderColumn style={{ color: "#7B1FA2" }} >product Pic</TableHeaderColumn>
+                            <TableHeaderColumn style={{ color: "#7B1FA2" }}>start Date</TableHeaderColumn>
+                             <TableHeaderColumn style={{ color: "#7B1FA2" }}>End Date</TableHeaderColumn>
+                
                         </TableRow>
                     </TableHeader>
 
                     <TableBody displayRowCheckbox={false}>
-                        {viewproduct.map((val, i) => {
+                        {BiddingData.map((val, i) => {
                             console.log("keyyyyyyyyyyyyyyyyyyyyyyyyyy",val.key)
                             return (
-                                <TableRow key={i} style={{ cursor: 'pointer' }} onTouchTap={() => { this.handleData(val.key) }}>
-                                    <TableRowColumn key={i}>{val.Products}</TableRowColumn>
-                                    <TableRowColumn key={i}>{val.company}</TableRowColumn>
+                                <TableRow key={i} >
+                                    <TableRowColumn key={i}>{val.name}</TableRowColumn>
+                                    <TableRowColumn key={i}>{val.email}</TableRowColumn>
+                                    <TableRowColumn key={i}>{val.amount}</TableRowColumn>
+                                    <TableRowColumn key={i}>{val.price}</TableRowColumn>
                                     <ListItem
                                         disabled={true}
                                         leftAvatar={
@@ -84,12 +80,8 @@ class ViewProduct extends React.Component {
                                     >
 
                                     </ListItem>
-
                                     <TableRowColumn key={i}>{val.sdate}</TableRowColumn>
                                     <TableRowColumn key={i}>{val.edate}</TableRowColumn>
-                                    <TableRowColumn key={i}>{val.price}</TableRowColumn>
-                                    <TableRowColumn key={i}>{val.quantity}</TableRowColumn>
-                                    <TableRowColumn><RaisedButton label="Start bidding" /></TableRowColumn>
                                 </TableRow>
                             )
                         })}
@@ -105,4 +97,4 @@ class ViewProduct extends React.Component {
 }
 
 
-export default ViewProduct;
+export default  ViewBidProduct;

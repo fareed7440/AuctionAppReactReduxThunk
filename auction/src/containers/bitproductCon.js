@@ -4,12 +4,14 @@ import { connect } from 'react-redux'
 import viewBitRequest from '../store/actions/bitproductAct'
 import UserDetail from '../store/actions/getUserDetail'
 import addBid  from '../store/actions/addBidAct'
+
 function mapStateToProps(state) {
     console.log("stateeeeeee", state)
     return {
         bit : state.BitReducer,
         looooooog : state.UserReducer,
-        bidd : state.AddBitReducer
+        bidd : state.AddBitReducer,
+    
     }
 }
 
