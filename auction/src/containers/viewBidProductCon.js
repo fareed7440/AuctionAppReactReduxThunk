@@ -6,7 +6,7 @@ function mapStateToProps(state) {
     console.log("email",state)
     return {
         app: state.viewBidProductReducer,
-       currentUserEmail : state.userReducer
+     //  currentUserEmail : state.userReducer
     }
 
 }
@@ -16,7 +16,7 @@ function mapDispatchToProps(dispatch) {
     return {
 
                   ViewBidProductRequest: (productdata) => dispatch(viewBidProductRequest(productdata)),
-                  // CurrentUserEmail : (user)=> (viewBidProductRequest(user))
+                  //CurrentUserEmail : (user)=> (viewBidProductRequest(user))
     }
 }
 

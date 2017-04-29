@@ -14,7 +14,7 @@ class BitProduct extends Component {
     }
 
     componentDidMount() {
-      //  this.props.userRequest()
+       this.props.users()
     //    this.props.loadProductDetail()
         this.props.ViewBitRequest(this.props.params.id)
       

@@ -29,6 +29,7 @@ class ViewBidProduct extends React.Component {
         this.props.ViewBidProductRequest()
        // this.props.bittingData()
       // this.props.viewBidProductRequest ()
+       this.props.CurrentUserEmail()
     }
 
     
