@@ -8,6 +8,7 @@ function UserDetail(){
     return dispatch => {
         dispatch(userDetailRequest());
     var user = DB.auth.currentUser;
+    
     console.log('fgggggggggggggggggggggggg',user);
 // var name, email,uid, 
 

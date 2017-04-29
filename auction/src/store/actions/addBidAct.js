@@ -16,7 +16,7 @@ function addBid(productData) {
             var y = e.getTime()
             console.log('eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee', y)
             if (y < new Date()) {
-                alert("Bidding time has been expired")
+                alert("Sorry! Bidding time has been expired")
             } else {
                 DB.database.ref('/BidData').push(productData, function (error) {
                     console.log('data', productData)

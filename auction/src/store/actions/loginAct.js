@@ -8,26 +8,22 @@ function loginRequest(loginData) {
     return dispatch => {
         dispatch(LoginRequest());
         DB.auth.signInWithEmailAndPassword(loginData.email, loginData.password).then((data) => {
-       // DB.database.ref('loginUser'+data.uid).set(loginData)
-       var userDetails = {
-           userId: data.uid,
-           userName: data.name
-       }
-       console.log("userDetails", userDetails)
-       console.log("data", data)
-         dispatch(LoginRequestSuccess(data))
+            // DB.database.ref('loginUser'+data.uid).set(loginData)
+            var userDetails = {
+                userId: data.uid,
+                userName: data.name
+            }
+            console.log("userDetails", userDetails)
+            console.log("data", data)
+            dispatch(LoginRequestSuccess(data))
             alert('login success')
-             dispatch(userDetailRequest());
-    var user = DB.auth.currentUser;
-    console.log('usssssser',user)
-      dispatch(userDetailRequestSuccess(user));
-    
-              browserHistory.push('/main')
+          
+            browserHistory.push('/main')
 
         })
-        
+
             .catch((error) => {
-                console.log('kjjjjjjjjjjjjjjj', error)
+              
                 alert('error')
                 dispatch(LoginRequestFailed(error))
             })
@@ -58,20 +54,5 @@ export function LoginRequestFailed() {
     }
 }
 
-
-
-export function  userDetailRequest (){
-    return{
-        type : Actions.USERDETAIL
-    }
-}
-
-
-export function userDetailRequestSuccess(data){
-    return{
-        type : Actions.USERDETAILSUCCESS,
-        data
-    }
-}
 
 export default loginRequest;

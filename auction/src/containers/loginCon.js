@@ -6,12 +6,13 @@ import viewBidProductRequest from '../store/actions/viewBidproductAct'
 //import logoutRequest from '../store/actions/logoutAct'
 //import Home from '../components/home'
 function mapStataToProps(state) {
+      console.log('ghghghghghghgh',state.UserReducer)
     return {
         auction: state.LoginReducer,
-        currentUserEmail : state.userReducer
+        currentUserEmail : state.UserReducer
        // snake: state.LoginReducer.isLogin
     }
-    console.log('ghghghghghghgh',state.LoginReducer)
+   // console.log('ghghghghghghgh',state.UserReducer)
 }
 
 
@@ -19,7 +20,7 @@ function mapDispatchToProps(dispatch) {
     return {
         LoginReq: (data) => dispatch(loginRequest(data)),
         //logoutReq: () => dispatch(logoutRequest())
-          CurrentUserEmail : (user)=> (viewBidProductRequest(user))
+          emailCurent : ()=> dispatch(viewBidProductRequest())
     }
 }
 

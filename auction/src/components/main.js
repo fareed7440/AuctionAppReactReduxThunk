@@ -17,7 +17,7 @@ class Main extends React.Component{
     constructor(){
         super()
         this.state = {
-      open: false
+      open: true
     }
     }
  handleToggle = () => this.setState({ open: !this.state.open });

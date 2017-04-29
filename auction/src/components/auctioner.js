@@ -20,7 +20,7 @@ class Auctioner extends React.Component{
 constructor(props){
     super(props)
 this.state = {
-      open: false
+      open: true
     }
 }
  handleToggle = () => this.setState({ open: !this.state.open });
@@ -48,6 +48,7 @@ this.state = {
           style = {{margin:'20',backgroundColor:'transparent',color:'white'}}
             label="main"
             primary={true}
+            
 
           /></ Link>
 

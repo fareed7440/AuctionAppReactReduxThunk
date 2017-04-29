@@ -1,10 +1,12 @@
 import Actions from './actionTypes'
 import * as DB from '../../firebase/database'
-function viewBidProductRequest(user) {
+function viewBidProductRequest() {
     return dispatch => {
-console.log('uuuuuuuuuuuuuuuuuu',user)
+
         dispatch(ViewBidProductRequest());
-        return DB.database.ref('/BidData').on('value', snap => {
+         var userEmail = DB.auth.currentUser.email
+         console.log('oooooooooooooo', userEmail)
+        return DB.database.ref('/BidData').orderByChild('email').equalTo(userEmail).on('value', snap => {
             const todo = [];
             snap.forEach(childSnapshot => {
                 var innerTodo = childSnapshot.val();
