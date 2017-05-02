@@ -9,6 +9,11 @@ function viewBidProductReducer (state = initialState,action){
             var state1 = Object.assign({},state,{viewBidProduct:action.data})
             state = state1
             return state
+        }
+          case Actions.ASSIGNREQUESTSUCCESS:{
+            var state6 = Object.assign({},state,{productAsign:action.data})
+            state = state6
+            return state
             }
 default:
 return state;    

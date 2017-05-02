@@ -12,7 +12,6 @@ function mapStataToProps(state) {
         currentUserEmail : state.UserReducer
        // snake: state.LoginReducer.isLogin
     }
-   // console.log('ghghghghghghgh',state.UserReducer)
 }
 
 

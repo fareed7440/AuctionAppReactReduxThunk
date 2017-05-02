@@ -28,9 +28,7 @@ class ViewBidProduct extends React.Component {
     componentDidMount() {
         this.props.ViewBidProductRequest()
         console.log("fareed ", this.props);
-       // this.props.bittingData()
-      // this.props.viewBidProductRequest ()
-    //   this.props.emailCurent() 
+       this.props.AssignToHiegherBider()
     }
 
     

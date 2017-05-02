@@ -2,6 +2,7 @@ import Actions from '../store/actions/actionTypes'
 import  ViewBidProduct from '../components/viewBidProduct'
 import { connect } from 'react-redux'
 import viewBidProductRequest from '../store/actions/viewBidproductAct'
+import asigntRequest from '../store/actions/asignProductAct'
 function mapStateToProps(state) {
     console.log("email",state)
     return {
@@ -16,7 +17,7 @@ function mapDispatchToProps(dispatch) {
     return {
 
                   ViewBidProductRequest: (productdata) => dispatch(viewBidProductRequest(productdata)),
-                  //CurrentUserEmail : (user)=> (viewBidProductRequest(user))
+                 AssignToHiegherBider : ()=> dispatch(asigntRequest())
     }
 }
 
