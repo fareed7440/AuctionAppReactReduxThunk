@@ -39,9 +39,9 @@ class ViewProduct extends React.Component {
 
     render() {
         const viewproduct = this.props && this.props.app && this.props.app.viewProduct ? this.props.app.viewProduct : [];
-        const viewbit = this.props && this.props.app && this.props.app.bidding ? this.props.app.bidding : [];
+       // const viewbit = this.props && this.props.app && this.props.app.bidding ? this.props.app.bidding : [];
         console.log('wievvvvvvvv', viewproduct);
-        console.log('bit viewproduct', viewbit)
+      //  console.log('bit viewproduct', viewbit)
 
         return (
             <div>
