@@ -7,7 +7,7 @@ function mapStateToProps(state) {
     console.log("email",state)
     return {
         app: state.viewBidProductReducer,
-     //  currentUserEmail : state.userReducer
+     // currentUserEmail : state.viewBidProductReducer.email
     }
 
 }
