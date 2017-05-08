@@ -9,6 +9,12 @@ function LoginReducer(state = initialState,action){
             var state2 = Object.assign({},state,{login:action.data})
             state = state2
             return state
+        }
+        
+           case Actions.FBLOGINREQUESTSUCCESS:{
+            var state2 = Object.assign({},state,{fblogin:action.data})
+            state = state2
+            return state
             }
 default:
 return state;    

@@ -91,7 +91,10 @@ class Login extends React.Component {
 
                     iconElementLeft={<IconButton><NavigationClose /></IconButton>}
 
-                />
+                >
+                 <RaisedButton label="FbLogin" onClick ={this.props.fbLoginReq} style={style} />
+
+                </AppBar>
                 <center>
                     <Paper style={style1} zDepth={4} rounded={false} >
                         <form onSubmit={this.handleFormInput}>
